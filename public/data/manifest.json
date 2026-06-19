@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-06-19T00:13:50.815Z",
+  "coverage": {
+    "start": "1940-06-10",
+    "end": "1945-12-31",
+    "days": 2031
+  },
+  "counts": {
+    "events": 70,
+    "places": 40,
+    "sources": 24
+  },
+  "events_by_type": {
+    "military_assignment": 1,
+    "battle_or_operation": 3,
+    "government_base": 20,
+    "political_meeting": 14,
+    "diplomatic_visit": 9,
+    "travel": 7,
+    "radio_broadcast": 3,
+    "ceremony": 6,
+    "speech": 5,
+    "return_to_france": 2
+  },
+  "events_by_certainty": {
+    "base_inferred": 10,
+    "attested_precise": 38,
+    "attested_range": 18,
+    "inferred_from_event": 2,
+    "uncertain": 2
+  },
+  "daily_by_basis": {
+    "source_gap": 170,
+    "base_inferred": 1644,
+    "attested": 217
+  },
+  "date_range": {
+    "first_event": "1939-09-02",
+    "last_event": "1945-11-21"
+  }
+}

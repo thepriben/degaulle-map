@@ -1,0 +1,17 @@
+{
+  "name": "degaulle-map",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Localisations sourcées de Charles de Gaulle, 1940-1945 (pipeline de données).",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "validate:data": "tsx scripts/validate-data.ts",
+    "build:data": "tsx scripts/build-data.ts",
+    "data": "npm run validate:data && npm run build:data"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

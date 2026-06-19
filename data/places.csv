@@ -1,0 +1,41 @@
+place_id,name,name_1940,lat,lng,country_current,country_1940,description,wikidata_id,geonames_id
+wangenbourg,Wangenbourg-Engenthal,Wangenbourg,48.6331,7.3172,France,France,"Village d'Alsace proche du secteur tenu par la 5e armée à l'automne 1939.",Q22972,
+paris,Paris,Paris,48.8566,2.3522,France,France,"Capitale de la France.",Q90,2988507
+montcornet,Montcornet,Montcornet,49.6936,4.0211,France,France,"Commune de l'Aisne, théâtre de la contre-attaque de la 4e DCR le 17 mai 1940.",Q22844,
+abbeville,Abbeville,Abbeville,50.1058,1.8357,France,France,"Commune de la Somme, secteur des combats de la 4e DCR fin mai 1940.",Q205418,
+bordeaux,Bordeaux,Bordeaux,44.8378,-0.5792,France,France,"Siège provisoire du gouvernement français en juin 1940.",Q1479,3031582
+london,Londres,Londres,51.5074,-0.1278,Royaume-Uni,Royaume-Uni,"Capitale britannique, base de la France libre de 1940 à 1943.",Q84,2643743
+london-bbc,BBC Broadcasting House,BBC (Londres),51.5186,-0.1439,Royaume-Uni,Royaume-Uni,"Siège de la radiodiffusion britannique d'où fut diffusé l'Appel du 18 juin.",Q608870,
+carlton-gardens,4 Carlton Gardens,Carlton Gardens,51.5061,-0.1316,Royaume-Uni,Royaume-Uni,"Quartier général de la France libre à Londres à partir de fin juillet 1940.",Q5045181,
+dakar,Dakar,Dakar,14.6928,-17.4467,Sénégal,Afrique-Occidentale française,"Port d'AOF, objectif de l'opération Menace en septembre 1940.",Q3718,2253354
+douala,Douala,Douala,4.0511,9.7679,Cameroun,Cameroun (mandat),"Principale ville du Cameroun, ralliée à la France libre en 1940.",Q3739,2232593
+yaounde,Yaoundé,Yaoundé,3.848,11.5021,Cameroun,Cameroun (mandat),"Capitale du Cameroun.",Q3808,2220957
+fort-lamy,N'Djamena,Fort-Lamy,12.1348,15.0557,Tchad,Afrique-Équatoriale française,"Capitale du Tchad, premier territoire rallié à la France libre (août 1940).",Q3661,2427123
+brazzaville,Brazzaville,Brazzaville,-4.2634,15.2429,République du Congo,Afrique-Équatoriale française,"Capitale de l'AEF, centre politique de la France libre en Afrique.",Q3844,2260535
+libreville,Libreville,Libreville,0.4162,9.4673,Gabon,Afrique-Équatoriale française,"Capitale du Gabon.",Q3719,2399697
+pointe-noire,Pointe-Noire,Pointe-Noire,-4.7889,11.8653,République du Congo,Afrique-Équatoriale française,"Port du Moyen-Congo.",Q170102,2255414
+cairo,Le Caire,Le Caire,30.0444,31.2357,Égypte,Égypte,"Quartier général allié au Proche-Orient.",Q85,360630
+damascus,Damas,Damas,33.5138,36.2765,Syrie,Levant (mandat français),"Capitale syrienne sous mandat français.",Q3766,170654
+beirut,Beyrouth,Beyrouth,33.8938,35.5018,Liban,Levant (mandat français),"Capitale libanaise sous mandat français.",Q3820,276781
+casablanca-anfa,Anfa (Casablanca),Anfa,33.5731,-7.6298,Maroc,Maroc (protectorat),"Banlieue de Casablanca, lieu de la conférence d'Anfa en janvier 1943.",Q5375480,
+algiers,Alger,Alger,36.7538,3.0588,Algérie,Algérie (française),"Siège du CFLN puis du GPRF de 1943 à 1944.",Q3561,2507480
+boufarik,Boufarik,Boufarik,36.5736,2.9089,Algérie,Algérie (française),"Aérodrome près d'Alger, lieu d'arrivée de De Gaulle le 30 mai 1943.",Q2719054,
+bayeux,Bayeux,Bayeux,49.2764,-0.7024,France,France,"Première ville continentale visitée par De Gaulle après le débarquement, le 14 juin 1944.",Q186221,
+washington,"Washington, D.C.","Washington, D.C.",38.9072,-77.0369,États-Unis,États-Unis,"Capitale fédérale américaine.",Q61,4140963
+mount-vernon,Mount Vernon,Mount Vernon,38.7293,-77.1074,États-Unis,États-Unis,"Domaine de George Washington en Virginie.",Q731635,
+new-york,New York,New York,40.7128,-74.006,États-Unis,États-Unis,"Métropole américaine.",Q60,5128581
+ottawa,Ottawa,Ottawa,45.4215,-75.6972,Canada,Canada,"Capitale fédérale canadienne.",Q1930,6094817
+quebec,Québec,Québec,46.8139,-71.208,Canada,Canada,"Capitale de la province de Québec.",Q2145,6325494
+montreal,Montréal,Montréal,45.5019,-73.5674,Canada,Canada,"Métropole québécoise.",Q340,6077243
+baku,Bakou,Bakou,40.4093,49.8671,Azerbaïdjan,RSS d'Azerbaïdjan (URSS),"Point d'arrivée aérien de la délégation française en URSS, novembre 1944.",Q9248,587084
+stalingrad,Volgograd,Stalingrad,48.708,44.5133,Russie,RSFS de Russie (URSS),"Ville détruite par la bataille de 1942-1943, visitée par De Gaulle le 30 novembre 1944.",Q914,472757
+moscow,Moscou,Moscou,55.7558,37.6173,Russie,RSFS de Russie (URSS),"Capitale soviétique, lieu de la signature du traité franco-soviétique.",Q649,524901
+metz,Metz,Metz,49.1193,6.1757,France,France,"Préfecture de la Moselle, visitée par De Gaulle le 11 février 1945.",Q22690,2994160
+strasbourg,Strasbourg,Strasbourg,48.5734,7.7521,France,France,"Capitale alsacienne, symbole de la libération du territoire en 1945.",Q6602,2973783
+colmar,Colmar,Colmar,48.0794,7.3585,France,France,"Sous-préfecture du Haut-Rhin.",Q41721,3020035
+mulhouse,Mulhouse,Mulhouse,47.7508,7.3359,France,France,"Ville du Haut-Rhin.",,
+saverne,Saverne,Saverne,48.7411,7.3625,France,France,"Ville du Bas-Rhin, étape du voyage en Alsace.",Q204989,
+lyon,Lyon,Lyon,45.764,4.8357,France,France,"Métropole du Rhône, étape des voyages de septembre 1944.",Q456,2996944
+marseille,Marseille,Marseille,43.2965,5.3698,France,France,"Grand port méditerranéen, étape de septembre 1944.",Q23482,2995469
+toulouse,Toulouse,Toulouse,43.6047,1.4442,France,France,"Métropole du Sud-Ouest, étape de septembre 1944.",Q7880,2972315
+noumea,Nouméa,Nouméa,-22.2758,166.458,France,Nouvelle-Calédonie (française),"Chef-lieu de la Nouvelle-Calédonie, territoire du Pacifique rallié à la France libre en 1940.",Q3674,2139521
