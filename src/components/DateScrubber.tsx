@@ -1,31 +1,17 @@
 import { BASIS_COLORS, BASIS_LABELS, formatFrenchDate } from "../lib/labels";
 import type { DailyRecord } from "../lib/types";
 
-const PERIODS: { label: string; date: string }[] = [
-  { label: "Londres 1940", date: "1940-06-18" },
-  { label: "Brazzaville", date: "1940-10-27" },
-  { label: "Alger 1943", date: "1943-06-03" },
-  { label: "Bayeux", date: "1944-06-14" },
-  { label: "Libération", date: "1944-08-25" },
-  { label: "Moscou", date: "1944-12-10" },
-  { label: "Victoire", date: "1945-05-08" },
-];
-
 export function DateScrubber({
   daily,
   index,
   onIndex,
-  onJump,
 }: {
   daily: DailyRecord[];
   index: number;
   onIndex: (i: number) => void;
-  onJump: (i: number) => void;
 }) {
   const current = daily[index];
   if (!current) return null;
-
-  const indexByDate = (iso: string) => daily.findIndex((d) => d.date === iso);
 
   const basisColor = BASIS_COLORS[current.basis];
 
@@ -88,23 +74,6 @@ export function DateScrubber({
       <div className="mt-2 flex justify-between text-[11px] text-stone-400">
         <span>{formatFrenchDate(daily[0]!.date)}</span>
         <span>{formatFrenchDate(daily[daily.length - 1]!.date)}</span>
-      </div>
-
-      <div className="mt-3 flex flex-wrap gap-1.5">
-        {PERIODS.map((p) => {
-          const i = indexByDate(p.date);
-          if (i < 0) return null;
-          return (
-            <button
-              key={p.label}
-              type="button"
-              onClick={() => onJump(i)}
-              className="rounded-full border border-stone-200 bg-stone-50 px-2.5 py-1 text-xs text-stone-600 transition hover:border-teal-600/40 hover:text-teal-700"
-            >
-              {p.label}
-            </button>
-          );
-        })}
       </div>
     </div>
   );

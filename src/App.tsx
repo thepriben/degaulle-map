@@ -77,12 +77,6 @@ export default function App() {
     recenter(e.lat, e.lng);
   }
 
-  function jumpToDay(i: number) {
-    setDayIndex(i);
-    const d = dataset?.daily[i];
-    if (d && d.lat != null && d.lng != null) recenter(d.lat, d.lng);
-  }
-
   if (error) {
     return (
       <div className="flex h-screen items-center justify-center p-6 text-center">
@@ -137,7 +131,6 @@ export default function App() {
             daily={dataset.daily}
             index={dayIndex}
             onIndex={setDayIndex}
-            onJump={jumpToDay}
           />
           <div className="rounded-xl border border-stone-200 bg-white p-3 shadow-sm">
             <Filters
@@ -155,6 +148,17 @@ export default function App() {
                 {filteredEvents.length}
               </span>
             </div>
+            <label className="mb-2 flex cursor-pointer items-center gap-2 text-sm text-stone-600">
+              <input
+                type="checkbox"
+                checked={filters.hideUncertain}
+                onChange={(e) =>
+                  setFilters({ ...filters, hideUncertain: e.target.checked })
+                }
+                className="h-4 w-4 rounded border-stone-300 text-teal-700 focus:ring-teal-600"
+              />
+              Masquer les entrées incertaines
+            </label>
             <EventList
               events={filteredEvents}
               selectedId={selectedId}

@@ -53,15 +53,6 @@ export const EVENT_TYPE_COLORS: Record<EventType, string> = {
   source_gap: "#94a3b8",
 };
 
-// Opacité de remplissage selon le niveau de certitude.
-export const CERTAINTY_OPACITY: Record<Certainty, number> = {
-  attested_precise: 0.95,
-  attested_range: 0.75,
-  inferred_from_event: 0.6,
-  base_inferred: 0.4,
-  uncertain: 0.25,
-};
-
 export const BASIS_COLORS: Record<DailyBasis, string> = {
   attested: "#0f766e",
   base_inferred: "#b45309",

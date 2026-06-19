@@ -70,18 +70,6 @@ export function Filters({
           );
         })}
       </div>
-
-      <label className="flex cursor-pointer items-center gap-2 text-sm text-stone-600">
-        <input
-          type="checkbox"
-          checked={state.hideUncertain}
-          onChange={(e) =>
-            onChange({ ...state, hideUncertain: e.target.checked })
-          }
-          className="h-4 w-4 rounded border-stone-300 text-teal-700 focus:ring-teal-600"
-        />
-        Masquer les entrées incertaines
-      </label>
     </div>
   );
 }

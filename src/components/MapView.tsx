@@ -1,16 +1,13 @@
 import { useEffect } from "react";
 import {
+  AttributionControl,
   CircleMarker,
   MapContainer,
   TileLayer,
   Tooltip,
   useMap,
 } from "react-leaflet";
-import {
-  CERTAINTY_OPACITY,
-  EVENT_TYPE_COLORS,
-  formatDateRange,
-} from "../lib/labels";
+import { EVENT_TYPE_COLORS, formatDateRange } from "../lib/labels";
 import type { DailyRecord, EventRecord } from "../lib/types";
 
 const RADIUS: Record<string, number> = {
@@ -64,7 +61,9 @@ export function MapView({
       worldCopyJump
       className="h-full w-full"
       scrollWheelZoom
+      attributionControl={false}
     >
+      <AttributionControl prefix='<a href="https://leafletjs.com">Leaflet</a>' />
       <TileLayer
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
         url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
@@ -86,16 +85,19 @@ export function MapView({
 
       {events.map((e) => {
         const selected = e.id === selectedId;
+        const uncertain = e.certainty === "uncertain";
+        const color = EVENT_TYPE_COLORS[e.event_type];
         return (
           <CircleMarker
             key={e.id}
             center={[e.lat, e.lng]}
             radius={(RADIUS[e.certainty] ?? 5) + (selected ? 3 : 0)}
             pathOptions={{
-              color: selected ? "#0c0a09" : "#ffffff",
-              weight: selected ? 2 : 1,
-              fillColor: EVENT_TYPE_COLORS[e.event_type],
-              fillOpacity: CERTAINTY_OPACITY[e.certainty],
+              color: selected ? "#0c0a09" : uncertain ? color : "#ffffff",
+              weight: selected ? 2 : uncertain ? 1.5 : 1,
+              dashArray: uncertain ? "2 3" : undefined,
+              fillColor: color,
+              fillOpacity: uncertain ? 0 : 0.85,
             }}
             eventHandlers={{ click: () => onSelect(e) }}
           >

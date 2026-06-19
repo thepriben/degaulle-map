@@ -1,19 +1,6 @@
 import { useState } from "react";
-import {
-  CERTAINTY_LABELS,
-  CERTAINTY_OPACITY,
-  EVENT_TYPE_COLORS,
-  EVENT_TYPE_LABELS,
-} from "../lib/labels";
-import type { Certainty, EventType } from "../lib/types";
-
-const CERTAINTY_ORDER: Certainty[] = [
-  "attested_precise",
-  "attested_range",
-  "inferred_from_event",
-  "base_inferred",
-  "uncertain",
-];
+import { EVENT_TYPE_COLORS, EVENT_TYPE_LABELS } from "../lib/labels";
+import type { EventType } from "../lib/types";
 
 export function Legend({ usedTypes }: { usedTypes: Set<EventType> }) {
   const [open, setOpen] = useState(false);
@@ -53,18 +40,21 @@ export function Legend({ usedTypes }: { usedTypes: Set<EventType> }) {
 
           <div>
             <p className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-stone-400">
-              Niveau de certitude (opacité)
+              Repères
             </p>
-            <ul className="space-y-1">
-              {CERTAINTY_ORDER.map((c) => (
-                <li key={c} className="flex items-center gap-2">
-                  <span
-                    className="inline-block h-3 w-3 rounded-full bg-stone-700"
-                    style={{ opacity: CERTAINTY_OPACITY[c] }}
-                  />
-                  <span className="text-stone-600">{CERTAINTY_LABELS[c]}</span>
-                </li>
-              ))}
+            <ul className="space-y-1.5">
+              <li className="flex items-center gap-2">
+                <span className="inline-block h-3 w-3 rounded-full bg-stone-700" />
+                <span className="text-stone-600">Localisation documentée</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="inline-block h-3 w-3 rounded-full border border-dashed border-stone-500 bg-transparent" />
+                <span className="text-stone-600">À vérifier (incertain)</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="inline-block h-3 w-3 rounded-full border border-dashed border-teal-700 bg-transparent" />
+                <span className="text-stone-600">Lieu présumé du jour</span>
+              </li>
             </ul>
           </div>
         </div>
