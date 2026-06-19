@@ -76,16 +76,28 @@ export function DateScrubber({
         <span>{formatFrenchDate(daily[daily.length - 1]!.date)}</span>
       </div>
 
-      <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 border-t border-stone-100 pt-2.5 text-[11px] text-stone-500">
-        {(["attested", "base_inferred", "source_gap"] as const).map((b) => (
-          <span key={b} className="inline-flex items-center gap-1.5">
-            <span
-              className="inline-block h-2 w-2 rounded-full"
-              style={{ backgroundColor: BASIS_COLORS[b] }}
-            />
-            {BASIS_LABELS[b]}
-          </span>
-        ))}
+      <div className="mt-3 border-t border-stone-100 pt-3">
+        <p className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-stone-400">
+          Niveaux
+        </p>
+        <div className="flex flex-wrap gap-1.5">
+          {(["attested", "base_inferred", "source_gap"] as const).map((b) => {
+            const c = BASIS_COLORS[b];
+            return (
+              <span
+                key={b}
+                className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium"
+                style={{ backgroundColor: `${c}1f`, color: c }}
+              >
+                <span
+                  className="inline-block h-2.5 w-2.5 rounded-full"
+                  style={{ backgroundColor: c }}
+                />
+                {BASIS_LABELS[b]}
+              </span>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
