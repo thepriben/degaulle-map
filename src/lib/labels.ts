@@ -37,6 +37,13 @@ export const BASIS_LABELS: Record<DailyBasis, string> = {
   source_gap: "Lacune de source",
 };
 
+export const BASIS_DEFINITIONS: Record<DailyBasis, string> = {
+  attested: "Un événement sourcé le situe précisément ce jour-là.",
+  base_inferred:
+    "Pas d'événement ce jour-là, mais sa base active (Londres, Alger, Paris…) est connue ; présence présumée.",
+  source_gap: "Ni événement ni base active : présence non documentée.",
+};
+
 // Couleurs par type d'événement (palette sobre et lisible).
 export const EVENT_TYPE_COLORS: Record<EventType, string> = {
   military_assignment: "#6d28d9",

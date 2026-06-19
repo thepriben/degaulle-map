@@ -1,4 +1,9 @@
-import { BASIS_COLORS, BASIS_LABELS, formatFrenchDate } from "../lib/labels";
+import {
+  BASIS_COLORS,
+  BASIS_DEFINITIONS,
+  BASIS_LABELS,
+  formatFrenchDate,
+} from "../lib/labels";
 import type { DailyRecord } from "../lib/types";
 
 export function DateScrubber({
@@ -77,27 +82,33 @@ export function DateScrubber({
       </div>
 
       <div className="mt-3 border-t border-stone-100 pt-3">
-        <p className="mb-1.5 text-[11px] font-semibold uppercase tracking-wide text-stone-400">
+        <p className="mb-2 text-[11px] font-semibold uppercase tracking-wide text-stone-400">
           Niveaux
         </p>
-        <div className="flex flex-wrap gap-1.5">
+        <ul className="space-y-2">
           {(["attested", "base_inferred", "source_gap"] as const).map((b) => {
             const c = BASIS_COLORS[b];
             return (
-              <span
-                key={b}
-                className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium"
-                style={{ backgroundColor: `${c}1f`, color: c }}
-              >
+              <li key={b} className="flex gap-2">
                 <span
-                  className="inline-block h-2.5 w-2.5 rounded-full"
+                  className="mt-1 inline-block h-2.5 w-2.5 shrink-0 rounded-full"
                   style={{ backgroundColor: c }}
                 />
-                {BASIS_LABELS[b]}
-              </span>
+                <div className="min-w-0">
+                  <span
+                    className="text-xs font-semibold"
+                    style={{ color: c }}
+                  >
+                    {BASIS_LABELS[b]}
+                  </span>
+                  <p className="text-[11px] leading-snug text-stone-500">
+                    {BASIS_DEFINITIONS[b]}
+                  </p>
+                </div>
+              </li>
             );
           })}
-        </div>
+        </ul>
       </div>
     </div>
   );
