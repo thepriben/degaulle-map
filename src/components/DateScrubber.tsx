@@ -75,6 +75,18 @@ export function DateScrubber({
         <span>{formatFrenchDate(daily[0]!.date)}</span>
         <span>{formatFrenchDate(daily[daily.length - 1]!.date)}</span>
       </div>
+
+      <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1 border-t border-stone-100 pt-2.5 text-[11px] text-stone-500">
+        {(["attested", "base_inferred", "source_gap"] as const).map((b) => (
+          <span key={b} className="inline-flex items-center gap-1.5">
+            <span
+              className="inline-block h-2 w-2 rounded-full"
+              style={{ backgroundColor: BASIS_COLORS[b] }}
+            />
+            {BASIS_LABELS[b]}
+          </span>
+        ))}
+      </div>
     </div>
   );
 }

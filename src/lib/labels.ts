@@ -33,7 +33,7 @@ export const CERTAINTY_SHORT: Record<Certainty, string> = {
 
 export const BASIS_LABELS: Record<DailyBasis, string> = {
   attested: "Présence attestée",
-  base_inferred: "Base présumée",
+  base_inferred: "Base inférée",
   source_gap: "Lacune de source",
 };
 
