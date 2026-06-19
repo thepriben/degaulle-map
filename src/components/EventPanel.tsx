@@ -108,13 +108,6 @@ export function EventPanel({
           <SourceBadge source={source} url={event.source_url} />
         </div>
 
-        {event.notes && (
-          <p className="mt-3 text-xs leading-relaxed text-stone-400">
-            <span className="font-semibold">Note de méthode :</span>{" "}
-            {event.notes}
-          </p>
-        )}
-
         {event.tags.length > 0 && (
           <div className="mt-4 flex flex-wrap gap-1.5">
             {event.tags.map((tag) => (
