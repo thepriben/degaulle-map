@@ -8,10 +8,29 @@
   "scripts": {
     "validate:data": "tsx scripts/validate-data.ts",
     "build:data": "tsx scripts/build-data.ts",
-    "data": "npm run validate:data && npm run build:data"
+    "data": "npm run validate:data && npm run build:data",
+    "dev": "vite",
+    "prebuild": "npm run data",
+    "build": "vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.3.1",
+    "@types/leaflet": "^1.9.21",
+    "@types/node": "^25.9.3",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^4.7.0",
+    "tailwindcss": "^4.3.1",
     "tsx": "^4.19.2",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "vite": "^6.4.3"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-leaflet": "^5.0.0"
   }
 }

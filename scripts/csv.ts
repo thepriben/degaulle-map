@@ -70,9 +70,7 @@ export function parseCsv(text: string): string[][] {
  * Lit un CSV avec en-tête et renvoie une liste d'objets typés par les noms
  * de colonnes. Ignore les lignes entièrement vides.
  */
-export function readCsvObjects<T extends Record<string, string>>(
-  path: string,
-): T[] {
+export function readCsvObjects<T>(path: string): T[] {
   const rows = parseCsv(readFileSync(path, "utf8"));
   if (rows.length === 0) return [];
 

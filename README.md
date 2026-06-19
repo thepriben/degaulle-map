@@ -2,8 +2,9 @@
 
 Jeu de données **sourcé** des localisations attestées ou raisonnablement inférées
 de Charles de Gaulle pendant la Seconde Guerre mondiale, accompagné d'un pipeline
-de construction CSV → JSON. Une couche de visualisation cartographique pourra être
-ajoutée par-dessus ces données.
+de construction CSV → JSON et d'un **site cartographique interactif**.
+
+▶ **Site en ligne : <https://thepriben.github.io/degaulle-map/>**
 
 > **Avertissement méthodologique.** Cette base ne prétend pas reconstituer minute
 > par minute les déplacements de Charles de Gaulle. Elle présente des localisations
@@ -49,6 +50,21 @@ npm run validate:data   # vérifie les CSV, signale erreurs et lacunes
 npm run build:data      # génère les JSON dans public/data/
 npm run data            # enchaîne validation puis build
 ```
+
+## Lancer le site
+
+Application **Vite + React + TypeScript + Leaflet** stylée avec **Tailwind CSS v4**.
+
+```bash
+npm run dev       # serveur de développement
+npm run build     # régénère les données puis construit le bundle (dossier dist/)
+npm run preview   # prévisualise le build de production
+```
+
+Le site est déployé automatiquement sur **GitHub Pages** à chaque push sur `main`
+via `.github/workflows/deploy.yml`. Fonctionnalités : carte interactive, curseur
+de date jour par jour, fiche détaillée avec source et niveau de certitude, filtres
+par type d'événement et légende.
 
 ## Modèle de données
 
