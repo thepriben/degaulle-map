@@ -9,6 +9,8 @@ import { MapView } from "./components/MapView";
 import { Legend } from "./components/Legend";
 
 const REPO_URL = "https://github.com/thepriben/degaulle-map";
+const COMMONS_URL =
+  "https://commons.wikimedia.org/wiki/File:Charles_de_Gaulle_au_micro_de_la_BBC.jpg";
 
 export default function App() {
   const [dataset, setDataset] = useState<Dataset | null>(null);
@@ -106,13 +108,31 @@ export default function App() {
     <div className="flex h-screen flex-col bg-stone-100">
       <header className="z-10 shrink-0 border-b border-stone-200 bg-white/90 px-4 py-3 backdrop-blur sm:px-6">
         <div className="flex items-center justify-between gap-4">
-          <div>
-            <h1 className="font-serif text-lg leading-tight text-stone-900 sm:text-xl">
-              Charles de Gaulle, 1940-1945
-            </h1>
-            <p className="text-xs text-stone-500">
-              Où était-il jour après jour&nbsp;?
-            </p>
+          <div className="flex items-center gap-3">
+            <a
+              href={COMMONS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              title="Charles de Gaulle au micro de la BBC, Londres (Wikimedia Commons, domaine public)"
+              className="shrink-0"
+            >
+              <img
+                src={`${import.meta.env.BASE_URL}degaulle-bbc.jpg`}
+                alt="Charles de Gaulle au micro de la BBC à Londres"
+                width={44}
+                height={44}
+                loading="lazy"
+                className="h-11 w-11 rounded-md object-cover object-top ring-1 ring-stone-200"
+              />
+            </a>
+            <div>
+              <h1 className="font-serif text-lg leading-tight text-stone-900 sm:text-xl">
+                Charles de Gaulle, 1940-1945
+              </h1>
+              <p className="text-xs text-stone-500">
+                Où était-il jour après jour&nbsp;?
+              </p>
+            </div>
           </div>
           <a
             href={REPO_URL}
