@@ -3,7 +3,7 @@
 Tenter de constituer un jeu de données **sourcé** des localisations de Charles de
 Gaulle pendant la Seconde Guerre mondiale, avec une **évaluation honnête de
 l'incertitude** : chaque entrée porte un niveau de certitude et une source, et les
-périodes réellement inconnues sont signalées plutôt que comblées.
+périodes réellement inconnues sont signalées.
 
 Site en ligne : <https://thepriben.github.io/degaulle-map/>
 
