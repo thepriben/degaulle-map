@@ -21,7 +21,6 @@ export default function App() {
   });
   const [focus, setFocus] = useState<[number, number] | null>(null);
   const focusTrigger = useRef(0);
-  const [showNote, setShowNote] = useState(true);
 
   useEffect(() => {
     loadDataset()
@@ -131,26 +130,6 @@ export default function App() {
           </a>
         </div>
       </header>
-
-      {showNote && (
-        <div className="flex items-start gap-3 border-b border-amber-200 bg-amber-50 px-4 py-2 text-xs text-amber-900 sm:px-6">
-          <p className="flex-1">
-            Cette carte ne reconstitue pas minute par minute les déplacements de
-            Charles de Gaulle. Elle présente des localisations attestées ou
-            raisonnablement inférées, avec leur niveau de certitude et leurs
-            sources. Les jours sans événement attesté héritent de la base
-            politique active.
-          </p>
-          <button
-            type="button"
-            onClick={() => setShowNote(false)}
-            className="shrink-0 rounded px-1 font-medium text-amber-700 hover:bg-amber-100"
-            aria-label="Masquer l'avertissement"
-          >
-            ✕
-          </button>
-        </div>
-      )}
 
       <main className="flex flex-1 flex-col overflow-hidden lg:flex-row">
         <aside className="thin-scroll order-2 flex w-full shrink-0 flex-col gap-3 overflow-y-auto bg-stone-50 p-3 lg:order-1 lg:w-[22rem] lg:border-r lg:border-stone-200">
