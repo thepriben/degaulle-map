@@ -35,6 +35,17 @@ function Recenter({
   return null;
 }
 
+// Recalcule la taille de la carte quand la mise en page change (ouverture/
+// fermeture du panneau de droite), sinon Leaflet garde l'ancienne largeur.
+function InvalidateSize({ token }: { token: unknown }) {
+  const map = useMap();
+  useEffect(() => {
+    const id = setTimeout(() => map.invalidateSize(), 220);
+    return () => clearTimeout(id);
+  }, [token, map]);
+  return null;
+}
+
 export function MapView({
   events,
   selectedId,
@@ -42,6 +53,7 @@ export function MapView({
   daily,
   focus,
   focusTrigger,
+  panelOpen,
 }: {
   events: EventRecord[];
   selectedId: string | null;
@@ -49,6 +61,7 @@ export function MapView({
   daily: DailyRecord | null;
   focus: [number, number] | null;
   focusTrigger: number;
+  panelOpen: boolean;
 }) {
   const hasDaily =
     daily && daily.basis !== "source_gap" && daily.lat != null && daily.lng != null;
@@ -113,6 +126,7 @@ export function MapView({
       })}
 
       <Recenter focus={focus} trigger={focusTrigger} />
+      <InvalidateSize token={panelOpen} />
     </MapContainer>
   );
 }

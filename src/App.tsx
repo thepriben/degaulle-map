@@ -175,6 +175,7 @@ export default function App() {
             daily={currentDaily}
             focus={focus}
             focusTrigger={focusTrigger.current}
+            panelOpen={!!selectedEvent}
           />
           <div className="pointer-events-none absolute inset-x-3 bottom-3 z-[500] flex items-end justify-between gap-3">
             <div className="pointer-events-auto max-w-[15rem]">
@@ -192,9 +193,15 @@ export default function App() {
           </div>
         </section>
 
-        <aside className="order-3 flex max-h-[50vh] w-full shrink-0 flex-col overflow-hidden border-t border-stone-200 bg-white lg:max-h-none lg:w-[24rem] lg:border-l lg:border-t-0">
-          <EventPanel event={selectedEvent} dataset={dataset} />
-        </aside>
+        {selectedEvent && (
+          <aside className="order-3 flex max-h-[50vh] w-full shrink-0 flex-col overflow-hidden border-t border-stone-200 bg-white lg:max-h-none lg:w-80 lg:border-l lg:border-t-0">
+            <EventPanel
+              event={selectedEvent}
+              dataset={dataset}
+              onClose={() => setSelectedId(null)}
+            />
+          </aside>
+        )}
       </main>
 
       <footer className="shrink-0 border-t border-stone-200 bg-white px-4 py-2 text-[11px] text-stone-400 sm:px-6">

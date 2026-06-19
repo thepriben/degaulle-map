@@ -18,20 +18,13 @@ const CERTAINTY_BADGE: Record<string, string> = {
 export function EventPanel({
   event,
   dataset,
+  onClose,
 }: {
   event: EventRecord | null;
   dataset: Dataset;
+  onClose: () => void;
 }) {
-  if (!event) {
-    return (
-      <div className="flex h-full flex-col items-center justify-center px-6 text-center">
-        <p className="text-sm text-stone-400">
-          Sélectionnez un point sur la carte ou un événement dans la liste pour
-          afficher sa fiche détaillée et sa source.
-        </p>
-      </div>
-    );
-  }
+  if (!event) return null;
 
   const place = dataset.placesById.get(event.place_id);
   const source = dataset.sourcesById.get(event.source_id);
@@ -42,12 +35,20 @@ export function EventPanel({
       : "";
 
   return (
-    <div className="flex h-full flex-col">
+    <div className="relative flex h-full flex-col">
       <div
         className="h-1.5 w-full shrink-0"
         style={{ backgroundColor: EVENT_TYPE_COLORS[event.event_type] }}
       />
-      <div className="thin-scroll flex-1 overflow-y-auto p-5">
+      <button
+        type="button"
+        onClick={onClose}
+        aria-label="Fermer la fiche"
+        className="absolute right-3 top-3.5 z-10 flex h-7 w-7 items-center justify-center rounded-full bg-white/80 text-stone-500 shadow-sm ring-1 ring-stone-200 backdrop-blur hover:text-stone-800"
+      >
+        ✕
+      </button>
+      <div className="thin-scroll flex-1 overflow-y-auto p-5 pr-12">
         <div className="mb-2 flex flex-wrap items-center gap-2">
           <span className="rounded-full bg-stone-100 px-2.5 py-0.5 text-xs font-medium text-stone-600">
             {EVENT_TYPE_LABELS[event.event_type]}
