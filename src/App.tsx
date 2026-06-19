@@ -108,10 +108,10 @@ export default function App() {
         <div className="flex items-center justify-between gap-4">
           <div>
             <h1 className="font-serif text-lg leading-tight text-stone-900 sm:text-xl">
-              Où était Charles de Gaulle&nbsp;?
+              Charles de Gaulle, 1940-1945
             </h1>
             <p className="text-xs text-stone-500">
-              Localisations attestées ou inférées · 1940-1945
+              Où était-il jour après jour&nbsp;?
             </p>
           </div>
           <a
