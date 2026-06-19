@@ -70,6 +70,17 @@ export default function App() {
     setFocus([lat, lng]);
   }
 
+  function resetView() {
+    if (!dataset) return;
+    setSelectedId(null);
+    setFilters({
+      activeTypes: new Set(dataset.events.map((e) => e.event_type)),
+      hideUncertain: false,
+    });
+    const start = dataset.daily.findIndex((x) => x.date === "1940-06-18");
+    setDayIndex(start >= 0 ? start : 0);
+  }
+
   function selectEvent(e: EventRecord) {
     setSelectedId(e.id);
     if (dataset) {
@@ -125,14 +136,19 @@ export default function App() {
                 className="h-11 w-11 rounded-md object-cover object-top ring-1 ring-stone-200"
               />
             </a>
-            <div>
+            <button
+              type="button"
+              onClick={resetView}
+              title="Réinitialiser la vue"
+              className="rounded text-left transition hover:opacity-70 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-600/40"
+            >
               <h1 className="font-serif text-lg leading-tight text-stone-900 sm:text-xl">
                 Charles de Gaulle, 1940-1945
               </h1>
               <p className="text-xs text-stone-500">
                 Où était-il jour après jour&nbsp;?
               </p>
-            </div>
+            </button>
           </div>
           <a
             href={REPO_URL}
